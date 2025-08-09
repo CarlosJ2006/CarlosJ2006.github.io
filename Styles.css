@@ -1,11 +1,13 @@
 body {
  font-family: Comic Sans MS; 
+ background-color: black;
+ text-color: black;
 }
 
 .container {
 padding: 50px;
 background-color: black;
 max-width: 600px;
-border-color: #051df7;
+border: 2px solid blue;
 }
 
