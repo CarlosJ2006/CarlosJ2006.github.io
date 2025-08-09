@@ -1,0 +1,11 @@
+body {
+ font-family: Comic Sans MS; 
+}
+
+.container {
+padding: 50px;
+background-color: black;
+max-width: 600px;
+border-color: #051df7;
+}
+
