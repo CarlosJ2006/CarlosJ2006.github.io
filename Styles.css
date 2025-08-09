@@ -1,6 +1,8 @@
 body {
  font-family: Comic Sans MS; 
  background-color: #000000;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
