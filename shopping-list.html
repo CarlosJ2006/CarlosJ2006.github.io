@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="Styles.css">
+    <title>Lista de compras dinamica</title>
+    <style>
+        li {
+            margin-bottom: 10px;
+        }
+
+        li button {
+            font-size: 12px;
+            margin-left: 20px;
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1> lista de compras </h1>
+
+    <div> 
+        <label for="item"> Enter a new item: </label>
+        <input type="text" name="item" id="item">
+        <button>Add item</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+    <script>
+
+        const list = document.querySelector("ul");
+        const input = document.querySelector("input");
+        const button = document.querySelector("button");
+
+        //funcion para responder a evento del boton:
+        button.addEventListener("click"  , () => {
+
+            //capturamos el valor ingresado en la caja de texto
+            const myItem = input.value;
+            input.value = "";
+
+            //creamos nuevos elementos html para ese item:
+            const listItem = document.createElement("li");
+            const listText = document.createElement("span");
+            const listBtn = document.createElement("Button");
+
+            //y lo agregamos a la lista vacia
+            //primero el texto:
+            
+            listItem.appendChild(listText);
+            listText.textContent = myItem;
+
+            listItem.appendChild(listBtn);
+            listBtn.textContent = "Delete";
+
+
+            list.appendChild(listItem);
+
+            listBtn.addEventListener("click", () => {
+                list.removeChild(listItem);
+            } );
+
+            input.focus();
+
+        }  );
+
+    </script>
+    
+</body>
+</html>
