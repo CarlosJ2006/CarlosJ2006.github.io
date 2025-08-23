@@ -1,28 +1,123 @@
 <!-- index.html -->
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carlos</title>
-  <link rel="stylesheet" href="Styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="Styles.css">
+    <title>Presentacion</title>
+    <style>
+        li {
+            margin-bottom: 10px;
+        }
+
+        li button {
+            font-size: 12px;
+            margin-left: 20px;
+            color: blue;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-  <h1>Presentacion</h1>
-
-    <ul>
-      <li><b> Nombre:</b> Carlos Joel </li>
-      <li><b> Edad:</b> 18</li>
-      <li><b> Profesion:</b> Universitario </li>
-      <li><b> Carrera: </b> Tec. en Desarrollo de Software</li>
-      <li><b> Conocimientos: </b> HTML, CSS, Ingles Intermedio</li>
-    </ul>
-
-    <p> Soy un aspirante a programador de software, me interesa el diseño y creacion de paginas web, y el internet, como blogs, foros, etc.</p>
+    <div class="container">
+   
+    <center>
+    <img src="./imagenes/1107845238.png" class="image">
+    </center>
     
+    <div class="text">
+   
+     <h1> CARLOS JOEL PAZ TOVAR </h1>
 
-  </div>
+    <li>
+        Edad: 18
+    </li>
+    <li>
+        Profesion: Universitario
+    </li>
+    <li>
+        Carrera: Tec. Desarrollo de Software
+    </li>
+
+    <p> Estudiante de la Universidad Santiago de Cali, curso Tecnologia en Desarrollo de Software, tengo conocimiento de HTML, y CSS,
+        me apasionan las paginas web. </p>
+    <div class="Skills">
+     
+        <div class="skill-col">
+     
+            <label for="item1"> Historial academico: </label>
+            <input type="text" id="item1">
+            <button data-list="list1">Añadir</button>    
+            <ul id="list1">
+                Bachiller Tecnico
+            </ul>
   
+        </div>
+
+  
+        <div class="skill-col">
+  
+            <label for="item2"> Historial laboral: </label>
+            <input type="text" id="item2">
+            <button data-list="list2">Añadir</button>
+            <ul id="list2">
+                Bolantero para la carpa 67, Diciembre de 2024.
+            </ul>
+  
+        </div>
+
+  
+        <div class="skill-col">
+  
+            <label for="item3"> Habilidades: </label>
+            <input type="text" id="item3">
+            <button data-list="list3">Añadir</button>
+            <ul id="list3">
+                Ingles B2. <br>
+                HTML y CSS.
+            </ul>
+            
+  
+        </div>
+
+    </div>
+    </div>
+
+    <script>
+
+       document.querySelectorAll("button[data-list]").forEach(button => {
+  button.addEventListener("click", () => {
+    const listId = button.getAttribute("data-list");
+    const list = document.getElementById(listId);
+    const input = button.previousElementSibling; 
+
+    const myItem = input.value.trim();
+    if (myItem === "") return;
+    input.value = "";
+
+    const listItem = document.createElement("li");
+    const listText = document.createElement("span");
+    const listBtn = document.createElement("button");
+
+    listText.textContent = myItem;
+    listBtn.textContent = "Delete";
+
+    listItem.appendChild(listText);
+    listItem.appendChild(listBtn);
+    list.appendChild(listItem);
+
+    listBtn.addEventListener("click", () => {
+      list.removeChild(listItem);
+    });
+
+    input.focus();
+  });
+});
+
+
+    </script>
+    </div>
+    
 </body>
 </html>
