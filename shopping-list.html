@@ -88,7 +88,7 @@
   button.addEventListener("click", () => {
     const listId = button.getAttribute("data-list");
     const list = document.getElementById(listId);
-    const input = button.previousElementSibling; // el input que está justo antes del botón
+    const input = button.previousElementSibling; 
 
     const myItem = input.value.trim();
     if (myItem === "") return;
@@ -118,4 +118,5 @@
     </div>
     
 </body>
+
 </html>
